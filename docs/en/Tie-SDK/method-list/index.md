@@ -24,7 +24,8 @@ sidebar: true
 - [Code()](#_2-3-10-code-specifying-address)  code specifying address
 - [Call()](#_2-3-11-message-call)  message call
 - [SendTransaction()](#_2-3-12-create-message-call) Create message to invoke transaction or contract creation
-- [SendRawTransaction()](#_2-3-13-create-a-new-message-for-a-signed-transaction-to-invoke-transaction-or-contract-creation)
+- [SendRawTransaction()](#_2-3-13-create-a-new-message-for-a-signed-transaction-to-invoke-transaction-or-contract-creation) Create a new message for a signed transaction to invoke transaction or contract creation
+- [SendRawTransaction()](#_2-3-25-send-transaction) send transaction
 - [EstimateGas()](#_2-3-14-estimate-transaction-gas-fees)  Estimate transaction gas fees
 - [GetBlockByHash()](#_2-3-15-hashed-block-information)  Block information for the specified hash
 - [GetBlockByNumber()](#_2-3-16-height-block-information)  Block information for the specified height
@@ -36,7 +37,6 @@ sidebar: true
 - [GetFilterChanges()](#_2-3-22-poll-filter)  Polls the specified filter and returns an array of newly generated logs since the last poll
 - [GetLogs()](#_2-3-23-all-logs-in-filter) All logs in the specified filter
 - [Sign()](#_2-3-24-generate-signature)  Generate signature
-- [SendRawTransactionStr()](#_2-3-25-send-transaction) send transaction
 
 
 ## 2. Method description
@@ -696,7 +696,7 @@ sign, err := tie.Eth().Sign(hexprv, txn, 97)
 
 ```go
 // If the sending is successful, it will return transaction hash failure 0x0
-result, err := tie.Eth().SendRawTransactionStr(sign)
+result, err := tie.Eth().SendRawTransaction(sign)
 ```
 
 - Verify public key

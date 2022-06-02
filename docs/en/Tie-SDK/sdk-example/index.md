@@ -58,7 +58,7 @@ if err != nil {
 
 
 // Send the transaction. err needs to be checked, and the transaction hash address will be returned if the sending is successful. Use the address to find the transaction in the blockchain browser
-result, err := tie.Eth().SendRawTransactionStr(sign)
+result, err := tie.Eth().SendRawTransaction(sign)
 if err != nil {
 	fmt.Println(err.Error())
 }

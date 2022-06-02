@@ -58,7 +58,7 @@ if err != nil {
 
 
 // 发送交易。需要检查 err，发送成功会返回 交易hash地址，使用地址在区块链浏览器查找交易
-result, err := tie.Eth().SendRawTransactionStr(sign)
+result, err := tie.Eth().SendRawTransaction(sign)
 if err != nil {
 	fmt.Println(err.Error())
 }

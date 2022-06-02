@@ -25,6 +25,7 @@ sidebar: true
 - [Call()](#_2-3-11-消息调用)  消息调用
 - [SendTransaction()](#_2-3-12-创建消息调用交易或合约创建) 创建消息调用交易或合约创建
 - [SendRawTransaction()](#_2-3-13-为已签名的交易创建新的消息调用交易或合约创建)  为已签名的交易创建新的消息调用交易或合约创建
+- [SendRawTransaction()](#_2-3-25-发送交易) 发送交易
 - [EstimateGas()](#_2-3-14-估算交易gas费)  估算交易gas费
 - [GetBlockByHash()](#_2-3-15-指定哈希的块信息)  指定哈希的块信息
 - [GetBlockByNumber()](#_2-3-16-指定高度的块信息)  指定高度的块信息
@@ -36,7 +37,6 @@ sidebar: true
 - [GetFilterChanges()](#_2-3-22-轮询指定的过滤器并返回自上次轮询之后新生成的日志数组)  轮询指定的过滤器，并返回自上次轮询之后新生成的日志数组
 - [GetLogs()](#_2-3-23-指定过滤器中的所有日志) 指定过滤器中的所有日志
 - [Sign()](#_2-3-24-生成签名)  生成签名
-- [SendRawTransactionStr()](#_2-3-25-发送交易) 发送交易
 
 
 ## 2. 方法说明
@@ -674,7 +674,7 @@ sign, err := tie.Eth().Sign(hexprv, txn, 97)
 
 ```go
 // 发送成功会返回 交易hash 失败 0x0
-result, err := tie.Eth().SendRawTransactionStr(sign)
+result, err := tie.Eth().SendRawTransaction(sign)
 ```
 
 - 验证公钥
